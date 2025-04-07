@@ -1,0 +1,274 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* General Body Styling */
+body {
+    background-color: #ECF0F1;
+    color: #34495E;
+}
+
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C3E50;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.header .logo a {
+    font-size: 2em;
+    font-weight: 600;
+    color: #ECF0F1;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-size: 1.2em;
+    color: #ECF0F1;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498DB;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    color: #ECF0F1;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+/* Home Section */
+section {
+    min-height: 100vh;
+    padding: 8rem 5% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.home-content h1, .home-content h2 {
+    font-size: 3em;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.home-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.home-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #34495E;
+    margin-bottom: .5em;
+}
+
+.role {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #7F8C8D;
+    margin-bottom: 1.5em;
+}
+
+.home-image img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Education Section */
+.education {
+    padding: 3rem 0 10rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timeline {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.timeline-items {
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-items:hover {
+    transform: translateY(-10px);
+}
+
+.timeline-items h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-content p {
+    font-size: 1em;
+    margin-bottom: 0.1rem;
+}
+
+.senior-secondary {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-end: -1;
+}
+
+.secondary {
+    grid-row-start: 3;
+}
+
+/* Skills Section */
+.skills {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-content-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skills-languages, .skills-frameworks, .skills-core {
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 calc(33.33% - 2rem); /* Ensures all divs are the same size */
+    min-width: 280px; /* Ensures that the divs don't become too small on smaller screens */
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills-languages h2, .skills-frameworks h2, .skills-core h2 {
+    font-size: 1.6em;
+    margin-bottom: 1rem;
+}
+
+.skills-languages p, .skills-frameworks p, .skills-core p {
+    font-size: 1.2em;
+    color: #7F8C8D;
+}
+
+.skills-languages:hover, .skills-frameworks:hover, .skills-core:hover {
+    transform: translateY(-10px);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em 2em;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #2C3E50;
+        width: 100%;
+        padding: 1em;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2em;
+        color: #ECF0F1;
+        cursor: pointer;
+    }
+
+    nav a {
+        font-size: 1.5em;
+        color: #ECF0F1;
+        text-align: center;
+        padding: 1em;
+        background-color: #34495E;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #3498DB;
+    }
+
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .timeline-items {
+        flex: 1 1 100%; /* Ensure equal size for timeline items */
+    }
+
+    .skills-content-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .skills-languages, .skills-frameworks, .skills-core {
+        flex: 1 1 100%; /* Stack the skill sections in mobile view */
+    }
+}
