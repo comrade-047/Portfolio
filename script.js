@@ -32,3 +32,26 @@ navLinks.forEach(link => {
         nav.classList.remove('active');
     });
 });
+
+document.getElementById('copyright').textContent = new Date().getFullYear();
+
+
+(function () {
+    emailjs.init("qEM9SEhPaQx5gh-O7"); 
+  })();
+
+  // Attach form submission logic
+  const form = document.getElementById("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); 
+
+    emailjs.sendForm("service_iju9x3r", "template_ld3ez5l", this)
+      .then(function () {
+        alert("Message sent successfully ");
+        form.reset(); // Reset form
+      }, function (error) {
+        alert("Something went wrong ");
+        console.log("FAILED...", error);
+      });
+  });

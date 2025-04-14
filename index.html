@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,12 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- ---Header--- -->
     <header class="header">
         <div class="logo">
-            <a href="">Amit</a>
+            <a href="">Amit</a> <!-- this will be used to change theme-->
         </div>
         <!-- Navigation -->
         <nav class="nav-links">
@@ -35,9 +37,13 @@
             <h2>Amit Kumar</h2>
             <p class="role">Tech Enthusiast | Aspiring Engineer | Learner</p>
             <p>
-                I am a 3rd-year B.Tech. (ECE) student at NIT Delhi with a good understanding of DSA in C++. 
-                Currently learning Web Development in the MERN Stack and looking forward to an internship to gain experience.
+                I am a 3rd-year B.Tech. (ECE) student at NIT Delhi with a good understanding of DSA in C++.
+                Currently learning Web Development in the MERN Stack and looking forward to an internship to gain
+                experience.
             </p>
+            <div class="professional-profiles">
+                <!-- leetcode and linkedin contact-->
+            </div>
         </div>
 
         <!-- Image -->
@@ -103,6 +109,28 @@
         </div>
     </section>
 
+    <!-- -----Contact----- -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <!-- to get suggestions or contact me through mail-->
+             <h1>Contact Me</h1>
+            <form action="" class="form" id="form">
+                <div class="form-content">
+                    <input class="inputs" type="text" placeholder="Your Name" name="user_name" id="user_name" required>
+                    <input class="inputs" type="email" placeholder="Mail Id" name="user_email" id="user_email" required>
+                    <textarea class="inputs" name="message" id="message" placeholder="Your Suggestion" rows="12"
+                        required></textarea>
+                    <button type="submit" class="submit" >Send</button>
+                </div>
+            </form>
+            
+        </div>
+        <footer class="footer">
+            &copy; <span id="copyright"></span>| All rights Resereved.
+        </footer>
+    </section>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

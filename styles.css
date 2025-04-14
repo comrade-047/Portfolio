@@ -207,11 +207,91 @@ section {
     transform: translateY(-10px);
 }
 
+/* Contact*/
+
+.contact{
+    padding: 5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f4f6f8; */
+}
+.contact-container{
+    flex: 1;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-container h1{
+    text-align: center;
+}
+.form{
+    padding: 1rem;
+    width: 50%;
+    height: 75%;
+    border: 1px solid;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-top: 1.5rem;
+}
+.form:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.form-content{
+    display: grid;
+    grid-template-columns: repeat(1,minmax(0,1fr));
+    gap: 1rem;
+}
+.inputs{
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    outline: none;
+}
+.submit{
+    width: 100%;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    border-radius: 0.75rem;
+    color: white;
+    background-color:#9cd0d4 ;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.submit:hover{
+    background-color: #6fe7f0;
+    transform: translate3d(-5px);
+}
+.social-icons{
+    display: flex;
+    /* gap: 2rem; */
+    flex-direction: column;
+    /* align-items:; */
+    justify-content: center;
+}
+.social-icons-items{
+    display: flex;
+    gap: 2rem;
+}
+.whatsapp{
+    background-image: url();
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        /* align-items: ; */
         padding: 1em 2em;
     }
 
@@ -255,13 +335,13 @@ section {
     .timeline {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
         gap: 2rem;
     }
 
-    .timeline-items {
-        flex: 1 1 100%; /* Ensure equal size for timeline items */
-    }
+    /* .timeline-items {
+        flex: 1 1 100%; /* Ensure equal size for timeline items 
+    } */
 
     .skills-content-container {
         flex-direction: column;
@@ -270,5 +350,12 @@ section {
 
     .skills-languages, .skills-frameworks, .skills-core {
         flex: 1 1 100%; /* Stack the skill sections in mobile view */
+    }
+}
+
+@media (max-width: 944px ) {
+    .home{
+       flex-direction: column; 
+       
     }
 }
