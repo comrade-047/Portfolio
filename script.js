@@ -35,6 +35,7 @@ navLinks.forEach(link => {
 
 document.getElementById('copyright').textContent = new Date().getFullYear();
 
+/**for sending mail to the suggester */
 
 (function () {
     emailjs.init("qEM9SEhPaQx5gh-O7"); 
@@ -55,3 +56,43 @@ document.getElementById('copyright').textContent = new Date().getFullYear();
         console.log("FAILED...", error);
       });
   });
+
+// trying something
+const words = ["Engineer", "Web Developer", "Tech Explorer", "Problem Solver"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+    const span = document.getElementById("typed-text");
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+        charIndex--;
+        span.textContent = currentWord.substring(0, charIndex);
+    } else {
+        charIndex++;
+        span.textContent = currentWord.substring(0, charIndex);
+    }
+
+    // Timing control
+    let typingSpeed = isDeleting ? 100 : 150;
+
+    // Word complete
+    if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typingSpeed = 1000; // pause before deleting
+    }
+
+    // Word deleted
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typingSpeed = 300; // pause before typing next word
+    }
+
+    setTimeout(type, typingSpeed);
+}
+
+document.addEventListener("DOMContentLoaded", type);
+
